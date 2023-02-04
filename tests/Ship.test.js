@@ -1,6 +1,11 @@
+import { Ship } from "../src/Ship";
+
 describe('Ship Class', () => {
   test('new Ship returns a new Object', () => {
-    expect(new Ship(3)).toBeInstanceOf(Ship);
-    expect(new Ship(2)).toEqual({ length: 2, hits: 0, sunk: false });
+    const ship = new Ship(2);
+    expect(ship).toBeInstanceOf(Ship);
+    expect(ship.length).toBe(2);
+    expect(ship.hits).toBe(0);
+    expect(ship.sunk).toBe(false);
   });
 });
