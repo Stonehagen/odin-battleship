@@ -1,11 +1,17 @@
-import { Ship } from "../src/Ship";
+import { Ship } from '../src/Ship';
 
 describe('Ship Class', () => {
+  const ship = new Ship(2);
   it('returns a new Ship after calling with new', () => {
-    const ship = new Ship(2);
     expect(ship).toBeInstanceOf(Ship);
     expect(ship.length).toBe(2);
-    expect(ship.hits).toBe(0);
     expect(ship.sunk).toBe(false);
+  });
+
+  it('ship sunk after two hits', () => {
+    ship.hit();
+    expect(ship.sunk).toBe(false);
+    ship.hit();
+    expect(ship.sunk).toBe(true);
   });
 });

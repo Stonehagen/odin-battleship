@@ -7,22 +7,23 @@ export class Ship {
   #sunk = false;
 
   constructor(length) {
-    this.length = length;
+    this.#length = length;
   }
 
   get length() {
     return this.#length;
   }
 
-  set length(length) {
-    this.#length = length;
-  }
-
-  get hits() {
-    return this.#hits;
-  }
-
   get sunk() {
     return this.#sunk;
+  }
+
+  hit() {
+    this.#hits += 1;
+    this.#sunk = this.isSunk();
+  }
+
+  isSunk() {
+    return this.#length <= this.#hits;
   }
 }
