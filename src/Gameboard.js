@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import { Field } from './Field';
 import { Ship } from './Ship';
 
@@ -31,7 +32,10 @@ export const Gameboard = () => {
     if (targetField.shot === null) {
       gameboard.ships.forEach((ship) => {
         ship.pos.forEach((shipCoords) => {
-          if (shipCoords[0] === targetCoords[0] && shipCoords[1] === targetCoords[1]) {
+          if (
+            shipCoords[0] === targetCoords[0] &&
+            shipCoords[1] === targetCoords[1]
+          ) {
             targetField.shot = 'hit';
             ship.hit();
           }
@@ -41,6 +45,11 @@ export const Gameboard = () => {
       return true;
     }
     return false;
+  };
+
+  gameboard.fleetSunk = () => {
+    const fleetLeft = gameboard.ships.filter((ship) => !ship.sunk);
+    return !(fleetLeft.length > 0);
   };
 
   return gameboard;
