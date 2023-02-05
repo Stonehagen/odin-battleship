@@ -11,6 +11,9 @@ describe('Gameboard Factory', () => {
   it('returns a new Gameboard after calling the factory', () => {
     expect(gameboard.placeShip(3, coords)).toBe(true);
     expect(gameboard.ships[0].pos).toEqual(coords);
-    expect(gameboard.receiveAttack([1, 1])).toBe('missed');
+    expect(gameboard.receiveAttack([1, 1])).toBe(true);
+    expect(gameboard.receiveAttack([3, 3])).toBe(true);
+    expect(gameboard.receiveAttack([3, 3])).toBe(false);
+    expect(gameboard.ships[0].damage).toBe(1);
   });
 });
