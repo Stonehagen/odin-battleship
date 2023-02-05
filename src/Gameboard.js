@@ -6,9 +6,9 @@ export const Gameboard = () => {
   const gameboard = {};
   gameboard.board = () => {
     const gBoard = [];
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 1; i <= 10; i += 1) {
       const row = [];
-      for (let j = 0; j < 10; j += 1) {
+      for (let j = 1; j <= 10; j += 1) {
         const field = Field([j, i]);
         row.push(field);
       }

@@ -2,5 +2,6 @@
 export const Field = (coords) => {
   const field = {};
   field.coordinates = coords;
+  field.shot = null;
   return field;
 };
