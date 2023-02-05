@@ -1,9 +1,10 @@
 // eslint-disable-next-line import/prefer-default-export
-export const Ship = (length) => {
+export const Ship = (length, coords) => {
   const ship = {};
   ship.length = length;
   ship.damage = 0;
   ship.sunk = false;
+  ship.pos = coords;
 
   ship.isSunk = () => ship.damage >= ship.length;
 

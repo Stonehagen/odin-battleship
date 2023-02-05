@@ -17,7 +17,7 @@ export const Gameboard = () => {
   };
   gameboard.ships = [];
   gameboard.placeShip = (length, coords) => {
-    const newShip = Ship(length);
+    const newShip = Ship(length, coords);
     gameboard.ships.push(newShip);
     return true;
   };
