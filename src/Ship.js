@@ -1,29 +1,16 @@
 // eslint-disable-next-line import/prefer-default-export
-export class Ship {
-  #length;
+export const Ship = (length) => {
+  const ship = {};
+  ship.length = length;
+  ship.damage = 0;
+  ship.sunk = false;
 
-  #hits = 0;
+  ship.isSunk = () => ship.damage >= ship.length;
 
-  #sunk = false;
+  ship.hit = () => {
+    ship.damage += 1;
+    ship.sunk = ship.isSunk();
+  };
 
-  constructor(length) {
-    this.#length = length;
-  }
-
-  get length() {
-    return this.#length;
-  }
-
-  get sunk() {
-    return this.#sunk;
-  }
-
-  hit() {
-    this.#hits += 1;
-    this.#sunk = this.isSunk();
-  }
-
-  isSunk() {
-    return this.#length <= this.#hits;
-  }
-}
+  return ship;
+};

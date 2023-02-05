@@ -1,9 +1,9 @@
+/* eslint-disable no-undef */
 import { Ship } from '../src/Ship';
 
 describe('Ship Class', () => {
-  const ship = new Ship(2);
-  it('returns a new Ship after calling with new', () => {
-    expect(ship).toBeInstanceOf(Ship);
+  const ship = Ship(2);
+  it('returns a new Ship after calling the factory', () => {
     expect(ship.length).toBe(2);
     expect(ship.sunk).toBe(false);
   });
