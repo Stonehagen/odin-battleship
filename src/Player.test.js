@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Player } from './Player';
 
 describe('Plater Factories', () => {

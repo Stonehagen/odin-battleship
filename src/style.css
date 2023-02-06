@@ -1,0 +1,51 @@
+body {
+  background-color: rgb(100, 84, 116);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  height: 100vh;
+  width: 49vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.computer-board,
+.player-board {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, 1fr);
+  gap: 1px;
+  border-radius: 10px;
+}
+
+.board-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1px;
+}
+
+.field {
+  background-color: rgb(186, 167, 184);
+}
+
+.computer-board .field:hover {
+  cursor: pointer;
+  background-color:  rgb(169, 139, 166);
+}
+
+[data-ship="true"] {
+  background-color:  rgb(185, 190, 125);
+}
+
+[data-shot="miss"] {
+  background-color:  rgb(141, 180, 210);
+}
+
+[data-shot="hit"] {
+  background-color:  rgb(214, 150, 118);
+}
