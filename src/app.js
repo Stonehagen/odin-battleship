@@ -1,8 +1,7 @@
 import { Player } from './Player';
 import { displayGame } from './DomDisplay';
+import { computerBoardEL } from './Events';
 import './style.css';
-
-const container = document.querySelector('#container');
 
 const player1 = Player('Human');
 player1.gameboard.placeShip(3, [
@@ -38,4 +37,5 @@ computer.gameboard.placeShip(2, [
 ]);
 computer.computer = true;
 
-displayGame(player1, computer, container);
+displayGame(player1, computer);
+computerBoardEL(player1, computer);

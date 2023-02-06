@@ -21,7 +21,6 @@ const addShips = (gameboard, ships) => {
   ships.forEach((ship) => {
     const coordinates = ship.pos;
     coordinates.forEach((coords) => {
-      console.log(coords);
       const strCoords = coords.join(',');
       const shipField = gameboard.querySelector(`[data-coords="${strCoords}"]`);
       shipField.dataset.ship = true;
@@ -29,7 +28,10 @@ const addShips = (gameboard, ships) => {
   });
 };
 
-export const displayGame = (player1, computer, container) => {
+export const displayGame = (player1, computer) => {
+  const container = document.querySelector('#container');
+  container.innerHTML = '';
+
   const computerGameboard = boardDisplay(computer.gameboard);
   computerGameboard.classList.add('computer-board');
 

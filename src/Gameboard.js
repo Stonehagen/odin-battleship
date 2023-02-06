@@ -33,8 +33,8 @@ export const Gameboard = () => {
       gameboard.ships.forEach((ship) => {
         ship.pos.forEach((shipCoords) => {
           if (
-            shipCoords[0] === targetCoords[0] &&
-            shipCoords[1] === targetCoords[1]
+            shipCoords[0] === +targetCoords[0] &&
+            shipCoords[1] === +targetCoords[1]
           ) {
             targetField.shot = 'hit';
             ship.hit();
